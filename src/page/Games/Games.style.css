@@ -1,0 +1,13 @@
+.Games-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+.Games-container ul {
+    list-style: none;
+}
+
+.Games-container li {
+    border: 1px solid black;
+}
