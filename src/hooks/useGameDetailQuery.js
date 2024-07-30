@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 
 
 const fetchGameDetails = (gameSlug) => {
+    console.log(gameSlug);
     return api.get(`/games/${gameSlug}`)
 }
 

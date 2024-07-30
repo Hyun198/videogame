@@ -9,7 +9,7 @@ function App() {
       <Layout />
       <Routes>
         <Route path="/" element={<Games />} />
-        <Route path="/games/:gameslug" element={<GameDetail />} />
+        <Route path="/games/:gameSlug" element={<GameDetail />} />
       </Routes>
     </div>
   );

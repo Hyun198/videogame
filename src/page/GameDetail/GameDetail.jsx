@@ -4,13 +4,16 @@ import { useGameDetailQuery } from '../../hooks/useGameDetailQuery';
 import { useParams } from 'react-router-dom';
 const GameDetail = () => {
     const { gameSlug } = useParams();
-    console.log(gameSlug);
+
     const { data, isLoading, isError, error } = useGameDetailQuery(gameSlug)
-    console.log(data);
 
     return (
         <div>
-            detailpage
+            <h1>{data?.name}</h1>
+            <p>Released: {data?.released}</p>
+            <p>Description: {data?.description_raw}</p>
+            <img src={data?.background_image} alt={data?.name} width="400" />
+
 
         </div>
     )

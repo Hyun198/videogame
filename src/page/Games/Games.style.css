@@ -1,13 +1,21 @@
 .Games-container {
     display: flex;
-    justify-content: center;
-
+    flex-direction: column;
 }
 
 .Games-container ul {
+    display: flex;
     list-style: none;
+    gap: 10px;
+    height: auto;
+    overflow-x: scroll;
 }
 
 .Games-container li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border: 1px solid black;
+    height: 300px;
+
 }
