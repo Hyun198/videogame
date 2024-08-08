@@ -35,7 +35,11 @@ const GameDetail = () => {
     const { data: series } = useGameSeriesQuery(gameSlug)
     const { data: screenshots } = useGameScreenShotQuery(gameSlug)
     const { data: trailer } = useGameTrailerQuery(gameSlug);
-    console.log(trailer);
+
+
+    if (!screenshots || !screenshots || screenshots.length === 0) {
+        return <div>No games found.</div>;
+    }
     return (
         <div>
             <div className="game-detail">
