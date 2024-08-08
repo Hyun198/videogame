@@ -3,3 +3,13 @@
     gap: 10px;
     border: 1px solid black;
 }
+
+.game-detail {
+    background-color: whitesmoke;
+}
+
+.screenshot img {
+    width: 650px;
+    height: auto;
+    border-radius: 10px;
+}

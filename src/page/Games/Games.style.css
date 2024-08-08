@@ -1,21 +1,44 @@
 .Games-container {
-    display: flex;
-    flex-direction: column;
+    padding: 20px;
 }
 
-.Games-container ul {
-    display: flex;
-    list-style: none;
-    gap: 10px;
-    height: auto;
-    overflow-x: scroll;
+.GameCard {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
 }
 
-.Games-container li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border: 1px solid black;
-    height: 300px;
+.GameCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s, filter 0.3s;
+}
 
+.GameCard:hover img {
+    transform: scale(1.1);
+    filter: brightness(70%);
+}
+
+.GameCard .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.GameCard:hover .overlay {
+
+    opacity: 1;
 }
