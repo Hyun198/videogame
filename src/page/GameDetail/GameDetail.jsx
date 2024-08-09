@@ -46,23 +46,16 @@ const GameDetail = () => {
                 <h1>{data?.name}</h1>
                 <img src={data?.background_image} alt={data?.name} width="400" />
                 <p>Released: {data?.released}</p>
-                <p>Description: {data?.description_raw}</p>
+                <p> {data?.description_raw}</p>
+                <h2>Screenshots</h2>
+                <Carousel responsive={responsive}>
+                    {screenshots?.map((screenshot) => (
+                        <div key={screenshot.id} className="screenshot">
+                            <img src={screenshot.image} alt="screenshot" />
+                        </div>
+                    ))}
+                </Carousel>
 
-            </div>
-            <h2>Screenshots</h2>
-            <Carousel responsive={responsive}>
-                {screenshots?.map((screenshot) => (
-                    <div key={screenshot.id} className="screenshot">
-                        <img src={screenshot.image} alt="screenshot" />
-                    </div>
-                ))}
-            </Carousel>
-
-            <h2>DLC</h2>
-            <div>
-                {series?.map((game, index) => (
-                    <img src={game.background_image} alt={game.name} width={"160px"} height={"160px"} />
-                ))}
             </div>
 
         </div>

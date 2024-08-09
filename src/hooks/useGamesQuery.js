@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query'
 
 
 const fetchGamesList = () => {
-    return api.get('/games')
+    return api.get('/games?metacritic')
 }
 
 

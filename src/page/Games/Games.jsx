@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useGamesQuery } from '../../hooks/useGamesQuery';
 import './Games.style.css';
+import Banner from '../../components/Banner/Banner';
 
 
 
@@ -19,6 +20,7 @@ const Games = () => {
 
     return (
         <div className="Games-container">
+
             <h1>게임 목록</h1>
             <div className="Games">
                 {GameList.map((game) => (

@@ -3,4 +3,10 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+
+}
+
+.App {
+    background: rgb(42, 41, 55);
+    background: linear-gradient(29deg, rgba(42, 41, 55, 1) 17%, rgba(9, 51, 121, 1) 32%, rgba(0, 212, 255, 1) 83%);
 }
