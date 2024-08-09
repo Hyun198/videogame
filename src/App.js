@@ -2,33 +2,21 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Games from './page/Games/Games';
 import GameDetail from './page/GameDetail/GameDetail';
-import { useState } from 'react';
+import Home from './page/Home/Home';
+import Banner from './components/Banner/Banner';
+import Creators from './page/Creators/Creators';
+import Stores from './page/Stores/Stores';
 function App() {
 
-  const [searchTerm, setSearchTerm] = useState("")
-  const [results, setResults] = useState([]);
-
-  const handleChange = (e) => {
-    setSearchTerm(e.target.value);
-  }
-  const onSubmit = (e) => {
-    e.preventDefault();
-    let slug = searchTerm.split(' ').join('-').toLowerCase();
-    setResults([]);
-
-  }
 
   return (
     <div className="App">
-      <nav>
-        <h2>게임 사전</h2>
-        <form onSubmit={onSubmit}>
-          <input type="text" value={searchTerm} onChange={handleChange} />
-          <button type="submit">search</button>
-        </form>
-      </nav>
+      <Banner />
       <Routes>
-        <Route path="/" element={<Games />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/games" element={<Games />} />
+        <Route path="/creators" element={<Creators />} />
+        <Route path="/stores" element={<Stores />} />
         <Route path="/games/:gameSlug" element={<GameDetail />} />
       </Routes>
     </div>

@@ -9,6 +9,7 @@ export const useGameSearchQuery = (query) => {
     return useQuery({
         queryKey: ['gameSearch', query],
         queryFn: () => fetchGameSearch(query),
-
+        select: data => data.data.results,
+        staleTime: 300000,
     })
 }

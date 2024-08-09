@@ -1,66 +1,36 @@
 import React from 'react'
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useGamesQuery } from '../../hooks/useGamesQuery';
 import './Games.style.css';
 
-const responsive = {
-    superLargeDesktop: {
-        // the naming can be any, depends on you.
-        breakpoint: { max: 4000, min: 3000 },
-        items: 6
-    },
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 3
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 2
-    },
-    mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 1
-    }
-};
 
 
 const Games = () => {
 
     const { data: GameList, error, isLoading, isError } = useGamesQuery();
-    console.log(GameList);
-
-    if (isLoading) {
-        <div>Loading...</div>
+    // 데이터 로딩 중, 에러 발생, 데이터 없음 처리
+    if (isLoading) return <div>로딩 중...</div>;
+    if (isError) return <div>게임을 불러오는 중 에러가 발생했습니다.</div>;
+    if (!GameList || GameList.length === 0) {
+        return <div>게임이 없습니다.</div>;
     }
 
-    if (isError) {
-        <div>에러 발생 ...</div>
-    }
-
-    // Check if data is loaded and has results
-    if (!GameList || !GameList || GameList.length === 0) {
-        return <div>No games found.</div>;
-    }
 
     return (
         <div className="Games-container">
-            <h1>Games</h1>
-            <Carousel responsive={responsive}>
-                {GameList?.map((game) => (
-                    <Link to={`/games/${game.slug}`}>
-                        <div className="GameCard" key={game.id}>
-                            <img src={game.background_image} alt={game.name} width="250" />
-                            <div className="overlay">
-                                <h3>{game.name}</h3>
-                            </div>
+            <h1>게임 목록</h1>
+            <div className="Games">
+                {GameList.map((game) => (
+                    <Link to={`/games/${game.slug}`} key={game.id} className="GameCard">
+                        <img src={game.background_image} alt={game.name} />
+                        <div className="overlay">
+                            <h3>{game.name}</h3>
                         </div>
                     </Link>
                 ))}
-            </Carousel>
+            </div>
         </div>
-
 
     )
 }

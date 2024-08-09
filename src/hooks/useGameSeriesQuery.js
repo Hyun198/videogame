@@ -2,7 +2,6 @@ import api from "../utils/api";
 import { useQuery } from '@tanstack/react-query';
 
 const fetchGameSeries = (gameSlug) => {
-    console.log(gameSlug);
     return api.get(`/games/${gameSlug}/game-series`)
 }
 
