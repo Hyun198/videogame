@@ -12,6 +12,7 @@ export const useGamesQuery = () => {
         queryKey: ['games'],
         queryFn: fetchGamesList,
         select: (data) => data.data.results,
-        staleTime: 300000, // 1 minute
+        staleTime: 1000 * 60 * 60,
+        cacheTime: 1000 * 60 * 60,
     })
 }

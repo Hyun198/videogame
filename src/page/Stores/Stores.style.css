@@ -1,0 +1,33 @@
+.stores {
+    color: white;
+}
+
+.stores .store {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 0px 10px;
+    gap: 10px;
+}
+
+.stores .store .store-card {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.stores .store .store-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s,
+
+}

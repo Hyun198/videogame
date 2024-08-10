@@ -1,0 +1,27 @@
+.store-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+
+
+.store-detail .store-detail-left img {
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+.store-detail .store-detail-right {
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.store-detail .store-detail-right p {
+    padding: 10px 5px 5px 5px;
+    font-size: 20px;
+
+}

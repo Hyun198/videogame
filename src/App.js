@@ -6,6 +6,7 @@ import Home from './page/Home/Home';
 import Banner from './components/Banner/Banner';
 import Creators from './page/Creators/Creators';
 import Stores from './page/Stores/Stores';
+import StoreDetail from './page/StoreDetail/StoreDetail';
 function App() {
 
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/games" element={<Games />} />
         <Route path="/creators" element={<Creators />} />
         <Route path="/stores" element={<Stores />} />
+        <Route path="/stores/:storeSlug" element={<StoreDetail />} />
         <Route path="/games/:gameSlug" element={<GameDetail />} />
       </Routes>
     </div>

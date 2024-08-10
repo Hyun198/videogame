@@ -11,6 +11,8 @@ const Games = () => {
 
     const { data: GameList, error, isLoading, isError } = useGamesQuery();
     // 데이터 로딩 중, 에러 발생, 데이터 없음 처리
+
+    console.log(GameList);
     if (isLoading) return <div>로딩 중...</div>;
     if (isError) return <div>게임을 불러오는 중 에러가 발생했습니다.</div>;
     if (!GameList || GameList.length === 0) {
@@ -21,15 +23,25 @@ const Games = () => {
     return (
         <div className="Games-container">
 
-            <h1>게임 목록</h1>
+            <h1>Game List</h1>
             <div className="Games">
                 {GameList.map((game) => (
-                    <Link to={`/games/${game.slug}`} key={game.id} className="GameCard">
-                        <img src={game.background_image} alt={game.name} />
-                        <div className="overlay">
-                            <h3>{game.name}</h3>
+                    <div className="GameCard" key={game.id}>
+                        <img src={game.background_image} alt={game.name} className="card-img" />
+                        <div className="card-body">
+                            <h3 className="card-title">{game.name}</h3>
+                            <p className="card-text">
+                                Reviews: {game.reviews_count}
+                            </p>
+                            <div className="card-details">
+                                <div className='detail-left'>
+                                    <p>Released: {game.released}</p>
+                                    <p>Updated: {game.updated}</p>
+                                </div>
+                                <Link to={`/games/${game.slug}`} className="card-link">See More</Link>
+                            </div>
                         </div>
-                    </Link>
+                    </div>
                 ))}
             </div>
         </div>
