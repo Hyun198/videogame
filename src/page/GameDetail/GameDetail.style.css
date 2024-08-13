@@ -3,10 +3,11 @@
 .game-detail {
     color: #fff;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    height: 100dvh;
     font-family: "Anek Devanagari", sans-serif;
     font-style: normal;
+    min-height: 100vh;
 }
 
 
@@ -16,12 +17,19 @@
     height: auto;
 }
 
+.game-detail-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 70px;
+}
+
 .game-detail-left,
 .game-detail-right {
-    padding-top: 30px
+    padding-top: 30px;
 }
 
 .game-detail-left {
+    margin-left: 50px;
     padding-left: 20px;
 }
 
@@ -90,4 +98,82 @@
 .game-informations .publishers p {
     font-size: 15px;
     width: fit-content;
+}
+
+/*----------------*/
+
+.game-detail-bottom {
+    padding-left: 20px;
+}
+
+.game-detail-bottom .menu {
+    display: flex;
+    position: relative;
+    margin-bottom: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.game-detail-bottom .menu::before {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    width: 100%;
+    height: 0.5px;
+    background-color: #fff;
+}
+
+.game-detail-bottom .menu-item {
+    padding: 10px 20px;
+    margin: 0;
+    text-transform: uppercase;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    color: #000;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border: none;
+}
+
+.game-detail-bottom .menu-item:hover {
+    background-color: #e0e0e0;
+}
+
+.game-detail-bottom .menu-item.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.game-detail-bottom .game-detail-content {
+    font-size: 15px;
+}
+
+.game-detail-bottom .game-detail-content ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 10px;
+}
+
+.game-detail-bottom .game-detail-content ul li {
+    margin: 5px 0;
+}
+
+.game-detail-bottom .game-detail-content .game-series {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-detail-bottom .game-detail-content .game-series img {
+    width: 130px;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+    margin: 10px auto;
 }
