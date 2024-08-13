@@ -3,8 +3,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useGamesQuery } from '../../hooks/useGamesQuery';
 import './Games.style.css';
-import Banner from '../../components/Banner/Banner';
-
 
 
 const Games = () => {
@@ -19,6 +17,11 @@ const Games = () => {
         return <div>게임이 없습니다.</div>;
     }
 
+    const changeDate = (inputTime) => {
+        const date = new Date(inputTime);
+        const formattedTime = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+        return formattedTime
+    }
 
     return (
         <div className="Games-container">
@@ -35,8 +38,8 @@ const Games = () => {
                             </p>
                             <div className="card-details">
                                 <div className='detail-left'>
-                                    <p>Released: {game.released}</p>
-                                    <p>Updated: {game.updated}</p>
+                                    <p>Released: {changeDate(game.released)}</p>
+                                    <p>Updated: {changeDate(game.updated)}</p>
                                 </div>
                                 <Link to={`/games/${game.slug}`} className="card-link">See More</Link>
                             </div>

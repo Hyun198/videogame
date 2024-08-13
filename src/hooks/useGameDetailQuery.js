@@ -13,6 +13,7 @@ export const useGameDetailQuery = (gameSlug) => {
         queryKey: ['gameDetail', gameSlug],
         queryFn: () => fetchGameDetails(gameSlug),
         select: (data) => data.data,
-        staleTime: 1000 * 60 * 5 // 5 minutes
+        staleTime: 1000 * 60 * 10, // 5 minutes
+        cacheTime: 1000 * 60 * 60,
     })
 }

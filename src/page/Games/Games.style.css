@@ -1,3 +1,8 @@
+.Games-container h1 {
+    text-align: center;
+    color: #fff;
+}
+
 .Games {
     display: flex;
     flex-wrap: wrap;
@@ -66,14 +71,20 @@
 }
 
 .card-link {
-    color: #007bff;
+    color: #333;
     /* 링크 색상 */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
+    text-transform: uppercase;
+    background-color: #007bff;
+    margin-left: 5px;
+    padding: 5px;
+    border-radius: 10px;
 }
 
 .card-link:hover {
-    color: #0056b3;
+    color: #fff;
+    background-color: #007bff;
     /* 호버 시 링크 색상 */
 }

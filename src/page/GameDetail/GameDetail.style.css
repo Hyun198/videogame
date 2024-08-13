@@ -1,27 +1,93 @@
-.platforms {
-    display: flex;
-    gap: 10px;
-    border: 1px solid black;
-}
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&family=Nanum+Gothic&display=swap');
 
 .game-detail {
-    text-align: center;
     color: #fff;
-    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    height: 100dvh;
+    font-family: "Anek Devanagari", sans-serif;
+    font-style: normal;
 }
 
-.game-detail h2 {
-    color: #fff;
-}
 
-.game-detail p {
+.game-image {
     width: 100%;
-    padding: 10px;
-    line-height: 20px;
+    /* 이미지가 열의 너비에 맞게 조정되도록 설정 */
+    height: auto;
 }
 
-.screenshot img {
-    width: 650px;
-    height: auto;
-    border-radius: 10px;
+.game-detail-left,
+.game-detail-right {
+    padding-top: 30px
+}
+
+.game-detail-left {
+    padding-left: 20px;
+}
+
+.game-detail-right {
+    padding-left: 50px;
+}
+
+.game-detail-right h2 span {
+    color: #004d66;
+}
+
+.game-description {
+    padding: 4px;
+    font-size: 20px;
+}
+
+.game-informations {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.game-informations span {
+
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.game-informations .platforms {
+    display: flex;
+    gap: 10px;
+}
+
+.game-informations .platforms p {
+    font-size: 15px;
+    width: fit-content;
+}
+
+
+.game-informations .developers {
+    display: flex;
+    gap: 10px;
+}
+
+.game-informations .developers p {
+    font-size: 15px;
+    width: fit-content;
+}
+
+.game-informations .genres {
+    display: flex;
+    gap: 10px;
+}
+
+.game-informations .genres p {
+    font-size: 15px;
+    width: fit-content;
+}
+
+.game-informations .publishers {
+    display: flex;
+    gap: 10px;
+}
+
+.game-informations .publishers p {
+    font-size: 15px;
+    width: fit-content;
 }
