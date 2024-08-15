@@ -1,0 +1,23 @@
+.creators h2 {
+
+    text-align: center;
+}
+
+.creators {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.creators .creator-card {
+    width: 30%;
+
+}
+
+.creators .creator-card .position-tag {
+    display: flex;
+
+    text-transform: capitalize;
+    gap: 10px;
+}

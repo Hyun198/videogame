@@ -1,6 +1,6 @@
 import React from 'react'
 import { useCreatorsQuery } from '../../hooks/useCreatorQuery'
-
+import './Creators.style.css';
 const Creators = () => {
 
     const { data: creators, error, isError, isLoading } = useCreatorsQuery();
@@ -8,14 +8,15 @@ const Creators = () => {
     if (isLoading) return <div>로딩 중...</div>;
     if (isError) return <div>데이터를 불러오는 중 에러가 발생했습니다: {error.message}</div>;
     return (
-        <div>Creators
+        <div className='creators'>
+            <h2>Creators</h2>
             {creators.map((creator) => (
                 <div key={creator.id} className="creator-card">
-                    <h2>이름: {creator.name}</h2>
+                    <p>이름: {creator.name}</p>
                     <img src={creator.image} alt={creator.name} width="160px" height="160px" />
-                    <div>
-                        포지션: {creator.positions.map((position, index) => (
-                            <span key={index} className="position-tag">{position.name}</span>
+                    <div className="position-tag">
+                        {creator.positions.map((position, index) => (
+                            <span key={index} >{position.name}</span>
                         ))}
                     </div>
                 </div>
