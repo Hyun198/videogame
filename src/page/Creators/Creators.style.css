@@ -1,23 +1,51 @@
 .creators h2 {
-
+    margin-bottom: 20px;
     text-align: center;
 }
 
 .creators {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
 
+.creators .creator-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
 }
 
 .creators .creator-card {
-    width: 30%;
-
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+    color: black;
 }
 
-.creators .creator-card .position-tag {
-    display: flex;
-
+.creators .creator-card p {
     text-transform: capitalize;
-    gap: 10px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.creators .creator-card img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 160px;
+    height: 160px;
+}
+
+.creators .creator-card .position-tag span {
+    display: inline-block;
+    background-color: #007bff;
+    border-radius: 12px;
+    padding: 5px 10px;
+    margin: 5px 5px 0 0;
+    font-size: 12px;
+    text-transform: capitalize;
 }

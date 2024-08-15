@@ -70,7 +70,11 @@ const Home = () => {
                         </Link>
                     ))}
                 </Carousel>
+            </section>
 
+            <section className="popular-screenshots">
+                <h2>Experience</h2>
+                {/* 스크린샷들 */}
             </section>
 
         </div>

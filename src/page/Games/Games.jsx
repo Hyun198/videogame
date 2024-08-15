@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useGamesQuery } from '../../hooks/useGamesQuery';
 import './Games.style.css';
 
-
+//카테고리별로 나누기
 const Games = () => {
 
     const { data: GameList, error, isLoading, isError } = useGamesQuery();
