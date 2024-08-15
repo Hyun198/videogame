@@ -4,6 +4,7 @@
 }
 
 .Games {
+    margin-left: 120px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -87,4 +88,35 @@
     color: #fff;
     background-color: #007bff;
     /* 호버 시 링크 색상 */
+}
+
+
+/*사이드바*/
+
+.genres {
+    position: absolute;
+    top: 130px;
+    left: 5px;
+    padding-top: 20px;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.genres ul {
+    list-style: none;
+}
+
+.genres ul li {
+    text-align: center;
+    padding: 0 5px;
+    height: 50px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.genres ul li:hover {
+    background-color: #0c69cd;
 }

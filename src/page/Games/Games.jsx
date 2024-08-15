@@ -1,21 +1,28 @@
-import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap';
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useGamesQuery } from '../../hooks/useGamesQuery';
 import './Games.style.css';
+import { useGameGenreQuery } from '../../hooks/useGameGenre';
 
 //카테고리별로 나누기
 const Games = () => {
 
     const { data: GameList, error, isLoading, isError } = useGamesQuery();
     // 데이터 로딩 중, 에러 발생, 데이터 없음 처리
+    const { data: genreList } = useGameGenreQuery();
+    console.log(genreList);
 
-    console.log(GameList);
+    const [selectedGenre, setSelectedGenre] = useState(null);
+
+
+
     if (isLoading) return <div>로딩 중...</div>;
     if (isError) return <div>게임을 불러오는 중 에러가 발생했습니다.</div>;
     if (!GameList || GameList.length === 0) {
         return <div>게임이 없습니다.</div>;
     }
+
+    const filterGames = selectedGenre ? GameList.filter(game => game.genres.some(genre => genre.id === selectedGenre)) : GameList;
 
     const changeDate = (inputTime) => {
         const date = new Date(inputTime);
@@ -27,8 +34,17 @@ const Games = () => {
         <div className="Games-container">
 
             <h1>Game List</h1>
+            <div className="genres">
+                {genreList?.map((genre) =>
+                    <ul>
+                        <li key={genre.id} onClick={() => setSelectedGenre(genre.id)}
+                            className={selectedGenre === genre.id ? 'selected' : ''}
+                        >{genre.name}</li>
+                    </ul>
+                )}
+            </div>
             <div className="Games">
-                {GameList.map((game) => (
+                {filterGames?.map((game) => (
                     <div className="GameCard" key={game.id}>
                         <img src={game.background_image} alt={game.name} className="card-img" />
                         <div className="card-body">

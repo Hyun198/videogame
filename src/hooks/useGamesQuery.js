@@ -3,7 +3,13 @@ import { useQuery } from '@tanstack/react-query'
 
 
 const fetchGamesList = () => {
-    return api.get('/games?metacritic')
+    return api.get('/games'
+        , {
+            params: {
+                page_size: 30,
+            }
+        }
+    )
 }
 
 
