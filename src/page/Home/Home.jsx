@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import './Home.style.css'
 import { useGamesQuery } from '../../hooks/useGamesQuery';
+import { useGameScreenShotQuery } from '../../hooks/useGameScreenShotQuery'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Link } from 'react-router-dom';
@@ -35,16 +36,32 @@ const responsive = {
 const Home = () => {
 
     const { data: games, error, isLoading, isError } = useGamesQuery();
-    console.log(games);
 
     if (isLoading) return <div>Loading...</div>;
     if (isError) return <div>Error: {error.message}</div>;
+
+
+    const GameScreenShots = ({ gameSlug }) => {
+        const { data: screenshots } = useGameScreenShotQuery(gameSlug);
+        const firstScreenshot = screenshots?.[3];
+        return (
+            <div className="screenshots">
+                {firstScreenshot ? (
+                    <img src={firstScreenshot.image} alt="Game Screenshot" />
+                ) : (
+                    <div>No screenshots available.</div>
+                )}
+            </div>
+
+        )
+    }
 
     return (
         <div className="All">
             <section className="Home">
                 <div className='content'>
                     <h1>Special.<br></br><span>Experience</span></h1>
+                    <img src="./sony.png" />
                 </div>
                 <div className="media-icons">
                     <a href="#"><FontAwesomeIcon icon={faFacebookF} className="icon" /></a>
@@ -60,6 +77,7 @@ const Home = () => {
                     infinite={true}
                     responsive={responsive}
                     itemClass="carousel-item"
+
                 >
                     {games?.map((game) => (
                         <Link to={`/games/${game.slug}`} key={game.id} className="popular-game">
@@ -74,8 +92,21 @@ const Home = () => {
 
             <section className="popular-screenshots">
                 <h2>Experience</h2>
-                {/* 스크린샷들 */}
+                <Carousel
+                    infinite={true}
+                    responsive={responsive}
+                    itemClass="carousel-item"
+
+                >
+                    {games?.map((game) => (
+                        <div key={game.id} className="game-screenshots">
+                            <GameScreenShots gameSlug={game.slug} />
+                        </div>
+                    ))}
+                </Carousel>
+
             </section>
+
 
         </div>
 

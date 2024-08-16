@@ -4,6 +4,7 @@ import Games from './page/Games/Games';
 import GameDetail from './page/GameDetail/GameDetail';
 import Home from './page/Home/Home';
 import Banner from './components/Banner/Banner';
+import Footer from './components/Footer/Footer';
 import Creators from './page/Creators/Creators';
 import Stores from './page/Stores/Stores';
 import StoreDetail from './page/StoreDetail/StoreDetail';
@@ -21,6 +22,7 @@ function App() {
         <Route path="/stores/:storeSlug" element={<StoreDetail />} />
         <Route path="/games/:gameSlug" element={<GameDetail />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

@@ -1,5 +1,49 @@
-.Games-container h1 {
+.Games-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+.sidebar {
+    width: 250px;
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 80px;
+    left: 0;
+    bottom: 0;
+    border-radius: 5px;
+    overflow-y: visible;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.selected {
+    background-color: #0c69cd;
+}
+
+.Games-content {
+    margin-left: 150px;
+    padding: 20px;
+    flex-grow: 1;
     text-align: center;
+}
+
+.Games-content h1 {
     color: #fff;
 }
 
@@ -7,9 +51,7 @@
     margin-left: 120px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 20px;
-    padding: 20px;
 }
 
 .GameCard {
@@ -91,32 +133,10 @@
 }
 
 
-/*사이드바*/
-
-.genres {
-    position: absolute;
-    top: 130px;
-    left: 5px;
-    padding-top: 20px;
+.Games-content .no-games-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-}
-
-.genres ul {
-    list-style: none;
-}
-
-.genres ul li {
-    text-align: center;
-    padding: 0 5px;
-    height: 50px;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-    text-transform: capitalize;
-}
-
-.genres ul li:hover {
-    background-color: #0c69cd;
+    font-size: 20px;
 }

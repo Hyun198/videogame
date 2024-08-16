@@ -33,36 +33,49 @@ const Games = () => {
     return (
         <div className="Games-container">
 
-            <h1>Game List</h1>
-            <div className="genres">
-                {genreList?.map((genre) =>
-                    <ul>
+            <div className="sidebar">
+                <h2>Genres</h2>
+                <ul>
+                    {genreList?.map((genre) =>
+
                         <li key={genre.id} onClick={() => setSelectedGenre(genre.id)}
                             className={selectedGenre === genre.id ? 'selected' : ''}
                         >{genre.name}</li>
-                    </ul>
-                )}
+
+                    )}
+                </ul>
             </div>
-            <div className="Games">
-                {filterGames?.map((game) => (
-                    <div className="GameCard" key={game.id}>
-                        <img src={game.background_image} alt={game.name} className="card-img" />
-                        <div className="card-body">
-                            <h3 className="card-title">{game.name}</h3>
-                            <p className="card-text">
-                                Reviews: {game.reviews_count}
-                            </p>
-                            <div className="card-details">
-                                <div className='detail-left'>
-                                    <p>Released: {changeDate(game.released)}</p>
-                                    <p>Updated: {changeDate(game.updated)}</p>
+
+            <div className="Games-content">
+                <h1>Game List</h1>
+                <div className="Games">
+                    {filterGames.length > 0 ? (
+                        filterGames.map((game) => (
+                            <div className="GameCard" key={game.id}>
+                                <img src={game.background_image} alt={game.name} className="card-img" />
+                                <div className="card-body">
+                                    <h3 className="card-title">{game.name}</h3>
+                                    <p className="card-text">
+                                        Reviews: {game.reviews_count}
+                                    </p>
+                                    <div className="card-details">
+                                        <div className='detail-left'>
+                                            <p>Released: {changeDate(game.released)}</p>
+                                            <p>Updated: {changeDate(game.updated)}</p>
+                                        </div>
+                                        <Link to={`/games/${game.slug}`} className="card-link">See More</Link>
+                                    </div>
                                 </div>
-                                <Link to={`/games/${game.slug}`} className="card-link">See More</Link>
                             </div>
+                        ))
+                    ) : (
+                        <div className="no-games-message">
+                            <p>해당 장르에 속하는 게임이 없습니다.</p>
                         </div>
-                    </div>
-                ))}
+                    )}
+                </div>
             </div>
+
         </div>
 
     )
