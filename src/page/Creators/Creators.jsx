@@ -1,11 +1,15 @@
 import React from 'react'
 import { useCreatorsQuery } from '../../hooks/useCreatorQuery'
 import './Creators.style.css';
+import { DotLoader } from 'react-spinners'
+
 const Creators = () => {
 
     const { data: creators, error, isError, isLoading } = useCreatorsQuery();
 
-    if (isLoading) return <div>로딩 중...</div>;
+    if (isLoading) return <div className="loading">
+        <DotLoader color="#a25ae9" />
+    </div>;
     if (isError) return <div>데이터를 불러오는 중 에러가 발생했습니다: {error.message}</div>;
     return (
         <div className='creators'>

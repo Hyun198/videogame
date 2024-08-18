@@ -7,7 +7,7 @@ import { useGameScreenShotQuery } from '../../hooks/useGameScreenShotQuery'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Link, useNavigate } from 'react-router-dom';
-
+import { DotLoader } from 'react-spinners'
 //1. 인기 탑 게임들
 //2. 카테고리별 구별
 //3. footer
@@ -38,7 +38,13 @@ const Home = () => {
     const navigate = useNavigate();
     const { data: games, error, isLoading, isError } = useGamesQuery();
 
-    if (isLoading) return <div>Loading...</div>;
+    if (isLoading) {
+        return (
+            <div className="loading">
+                <DotLoader color="#a25ae9" />
+            </div>
+        )
+    }
     if (isError) return <div>Error: {error.message}</div>;
 
 
