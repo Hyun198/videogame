@@ -8,6 +8,8 @@ import Footer from './components/Footer/Footer';
 import Creators from './page/Creators/Creators';
 import Stores from './page/Stores/Stores';
 import StoreDetail from './page/StoreDetail/StoreDetail';
+import SearchResult from './page/SearchResult/SearchResult';
+
 function App() {
 
 
@@ -21,6 +23,7 @@ function App() {
         <Route path="/stores" element={<Stores />} />
         <Route path="/stores/:storeSlug" element={<StoreDetail />} />
         <Route path="/games/:gameSlug" element={<GameDetail />} />
+        <Route path="/search/:query" element={<SearchResult />} />
       </Routes>
       <Footer />
     </div>

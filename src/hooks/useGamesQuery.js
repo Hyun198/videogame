@@ -6,7 +6,7 @@ const fetchGamesList = () => {
     return api.get('/games'
         , {
             params: {
-                page_size: 30,
+                page_size: 50,
             }
         }
     )

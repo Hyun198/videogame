@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import './Home.style.css'
@@ -6,7 +6,7 @@ import { useGamesQuery } from '../../hooks/useGamesQuery';
 import { useGameScreenShotQuery } from '../../hooks/useGameScreenShotQuery'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 //1. 인기 탑 게임들
 //2. 카테고리별 구별
@@ -34,7 +34,8 @@ const responsive = {
 };
 
 const Home = () => {
-
+    const [query, setQuery] = useState("");
+    const navigate = useNavigate();
     const { data: games, error, isLoading, isError } = useGamesQuery();
 
     if (isLoading) return <div>Loading...</div>;
@@ -56,6 +57,12 @@ const Home = () => {
         )
     }
 
+    const handleSearch = () => {
+        if (query.trim()) {
+            navigate(`/search/${query}`);
+        }
+    }
+
     return (
         <div className="All">
             <section className="Home">
@@ -69,6 +76,16 @@ const Home = () => {
                     <a href="#"><FontAwesomeIcon icon={faTwitter} className="icon" /></a>
                     <a href="#"><FontAwesomeIcon icon={faDiscord} className="icon" /></a >
                 </div>
+            </section>
+
+            <section className="search-bar">
+                <h1>Find your Adventure</h1>
+                <input className="search-input"
+                    type="text"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder="Search ..." />
+                <button onClick={handleSearch} className="search-btn">Search</button>
             </section>
 
             <section className="popular-games">
@@ -96,7 +113,6 @@ const Home = () => {
                     infinite={true}
                     responsive={responsive}
                     itemClass="carousel-item"
-
                 >
                     {games?.map((game) => (
                         <div key={game.id} className="game-screenshots">
@@ -104,10 +120,7 @@ const Home = () => {
                         </div>
                     ))}
                 </Carousel>
-
             </section>
-
-
         </div>
 
 

@@ -85,6 +85,32 @@ section {
     text-align: center;
 }
 
+/*search bar*/
+.search-bar {
+    text-align: center;
+}
+
+.search-bar h1 {
+    color: #fff;
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+
+.search-bar .search-input {
+    width: 50%;
+    padding: 10px 5px;
+    border-radius: 10px;
+    font-size: 16px;
+    border: none;
+}
+
+.search-bar .search-btn {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+
+}
+
 .popular-games h2 {
     color: #fff;
     font-weight: 600;
