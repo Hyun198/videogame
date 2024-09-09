@@ -40,8 +40,6 @@ Maybe you can mention me or this repo in the acknowledgements too
 
   <p>RAWG API를 이용해 받아온 여러 게임 데이터들을 사용자가 찾아보기 쉽도록 하기 위해서 제작</p>
 
-  <p>알바생들의 출근시간 계산을 자동화시켜 지각률을 낮추고, 매니저들의 스케줄 작성에 도움을 주기 위해 개발하게 됐습니다.</p>
-
 ## :sparkles: structure
 
   <img src="./public/videogame.png" style="text-align:center">
