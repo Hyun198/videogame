@@ -74,13 +74,13 @@ const Home = () => {
             <section className="Home">
                 <div className='content'>
                     <h1>Special.<br></br><span>Experience</span></h1>
-                    <img src="./sony.png" />
+                    <img src="./sony.png" alt="sony" />
                 </div>
                 <div className="media-icons">
-                    <a href="#"><FontAwesomeIcon icon={faFacebookF} className="icon" /></a>
-                    <a href="#" ><FontAwesomeIcon icon={faInstagram} className="icon" /></a>
-                    <a href="#"><FontAwesomeIcon icon={faTwitter} className="icon" /></a>
-                    <a href="#"><FontAwesomeIcon icon={faDiscord} className="icon" /></a >
+                    <a href="#"><FontAwesomeIcon icon={faFacebookF} className="icon" alt="facebook" /></a>
+                    <a href="#" ><FontAwesomeIcon icon={faInstagram} className="icon" alt="instagram" /></a>
+                    <a href="#"><FontAwesomeIcon icon={faTwitter} className="icon" alt="twitter" /></a>
+                    <a href="#"><FontAwesomeIcon icon={faDiscord} className="icon" alt="discord" /></a>
                 </div>
             </section>
 
