@@ -23,7 +23,6 @@ Maybe you can mention me or this repo in the acknowledgements too
 # :notebook_with_decorative_cover: Table of Contents
 
 - [About the Project](#star2-about-the-project)
-  - [Structure](#sparkles-structure)
   - [Screenshots](#camera-screenshots)
   - [Tech Stack](#space_invader-tech-stack)
   - [Environment Variables](#key-environment-variables)
@@ -40,16 +39,12 @@ Maybe you can mention me or this repo in the acknowledgements too
 
   <p>RAWG API를 이용해 받아온 여러 게임 데이터들을 사용자가 찾아보기 쉽도록 하기 위해서 제작</p>
 
-## :sparkles: structure
-
-  <img src="./public/videogame.png" style="text-align:center">
-
 <!-- Screenshots -->
 
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="./relative/cgvapp.png" alt="screenshot" />
+  <img src="./public/videogame.png" style="text-align:center">
 
 </div>
 
