@@ -21,7 +21,7 @@ const GameDetail = () => {
     const { data: series } = useGameSeriesQuery(gameSlug)
     const { data: screenshots } = useGameScreenShotQuery(gameSlug)
     const { data: trailer } = useGameTrailerQuery(gameSlug);
-    console.log(series);
+
 
     if (!data || !data || data.length === 0) {
         return <div>No games found.</div>;
@@ -41,8 +41,8 @@ const GameDetail = () => {
 
                 <div className="game-detail-right" lg={6} xs={12}>
                     <h2><span>Game </span>Details</h2>
-                    <div className="game-description">
-                        {(data?.description).split('<br />')[0].replace(/<p>/g, '') || (data?.description).split('<p />')[0].replace(/<p>/g, '')}
+                    <div className="game-description" dangerouslySetInnerHTML={{ __html: data?.description }}>
+
                     </div>
                     <div className="game-informations">
                         <span>RELEASE DATE : </span>{data?.released}
@@ -101,14 +101,14 @@ const GameDetail = () => {
                     )}
                     {selectedMenu === 'series' && (
                         <div>
-                            <ul>
-                                {series?.map(series => (
-                                    <li key={series.id} className="game-series">
-                                        <img src={series.background_image} />
-                                        {series.name}
-                                    </li>
-                                ))}
-                            </ul>
+
+                            {series?.map(series => (
+                                <div key={series.id} className="game-series">
+                                    <img src={series.background_image} />
+                                    {series.name}
+                                </div>
+                            ))}
+
                         </div>
                     )}
                 </div>

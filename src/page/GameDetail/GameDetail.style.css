@@ -149,21 +149,18 @@
     font-size: 15px;
 }
 
-.game-detail-bottom .game-detail-content ul {
+.game-detail-bottom .game-detail-content div {
     display: flex;
     list-style: none;
     padding: 0;
     gap: 10px;
 }
 
-.game-detail-bottom .game-detail-content ul li {
-    margin: 5px 0;
-}
-
 .game-detail-bottom .game-detail-content .game-series {
     display: flex;
     flex-direction: column;
     width: 150px;
+    height: 200px;
     font-size: 15px;
     text-align: center;
     justify-content: center;
@@ -171,9 +168,9 @@
 }
 
 .game-detail-bottom .game-detail-content .game-series img {
-    width: 130px;
-    height: 150px;
-    object-fit: cover;
+    position: relative;
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
     object-position: center;
-    margin: 10px auto;
 }
