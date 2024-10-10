@@ -10,7 +10,7 @@ const Games = () => {
     const { data: GameList, error, isLoading, isError } = useGamesQuery();
     // 데이터 로딩 중, 에러 발생, 데이터 없음 처리
     const { data: genreList } = useGameGenreQuery();
-    console.log(genreList);
+
 
     const [selectedGenre, setSelectedGenre] = useState(null);
 
