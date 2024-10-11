@@ -4,7 +4,6 @@ import { useGameDetailQuery } from '../../hooks/useGameDetailQuery';
 import { useGameSeriesQuery } from '../../hooks/useGameSeriesQuery';
 import { useParams } from 'react-router-dom';
 import { useGameScreenShotQuery } from '../../hooks/useGameScreenShotQuery';
-import { useGameTrailerQuery } from '../../hooks/useGameTrailerQuery';
 import { Container } from 'react-bootstrap';
 
 const GameDetail = () => {
@@ -20,7 +19,7 @@ const GameDetail = () => {
     const { data, isLoading, isError, error } = useGameDetailQuery(gameSlug)
     const { data: series } = useGameSeriesQuery(gameSlug)
     const { data: screenshots } = useGameScreenShotQuery(gameSlug)
-    /*  const { data: trailer } = useGameTrailerQuery(gameSlug); */
+
 
 
     if (!data || !data || data.length === 0) {
