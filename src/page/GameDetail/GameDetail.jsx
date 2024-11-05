@@ -100,7 +100,6 @@ const GameDetail = () => {
                     )}
                     {selectedMenu === 'series' && (
                         <div>
-
                             {series?.map(series => (
                                 <div key={series.id} className="game-series">
                                     <img src={series.background_image} />

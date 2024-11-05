@@ -14,28 +14,23 @@ const SearchResult = () => {
     const sortedResults = searchResults?.sort((a, b) => new Date(b.released) - new Date(a.released));
     const mostPopularResult = sortedResults[0];
 
-
     return (
         <div>
-
+            <h1>Search Results for "{query}"</h1>
             <div className="most-popular-game">
-                <h1>Search Results for "{query}"</h1>
+
                 <h2>{mostPopularResult.name}</h2>
                 <img src={mostPopularResult.background_image} />
-                <p>Rating: {mostPopularResult.rating}</p>
-                <p>Ratings Count: {mostPopularResult.ratings_count}</p>
                 <p>Released: {mostPopularResult.released}</p>
             </div>
 
-            <h3>Other Results:</h3>
+            <h3>Other Results</h3>
             <div className="other-results">
 
                 {sortedResults?.slice(1).map((game) => (
                     <div key={game.id} className="game-item">
-                        <h4>{game.name}</h4>
-                        <img src={game.background_image} alt={game.name} width="200" />
-                        <p>Rating: {game.rating}</p>
-                        <p>Ratings Count: {game.ratings_count}</p>
+                        <img src={game.background_image} alt={game.name} />
+                        <p>{game.name}</p>
                         <p>Released: {game.released}</p>
                     </div>
                 ))}

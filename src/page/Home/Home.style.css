@@ -130,6 +130,7 @@ section {
 
 .search-input {
     flex: 1;
+    color: #000;
     padding: 10px;
     border: none;
     outline: none;

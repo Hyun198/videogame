@@ -100,7 +100,6 @@ const Home = () => {
                     infinite={true}
                     responsive={responsive}
                     itemClass="carousel-item"
-
                 >
                     {games?.map((game) => (
                         <Link to={`/games/${game.slug}`} key={game.id} className="popular-game">
