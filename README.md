@@ -1,11 +1,5 @@
 <div align="center">
-
-  <img src="/relative/cgvapp.png" alt="logo" width="200" height="auto" />
   <h1>VideoGame database</h1>
-
-<h4>
-    <a href="">View Demo</a>
-  </h4>
 </div>
 
 <br />
