@@ -1,11 +1,3 @@
-<!--
-Hey, thanks for using the awesome-readme-template template.
-If you have any enhancements, then fork this project and create a pull request
-or just open an issue with the label "enhancement".
-
-Don't forget to give this project a star for additional support ;)
-Maybe you can mention me or this repo in the acknowledgements too
--->
 <div align="center">
 
   <img src="/relative/cgvapp.png" alt="logo" width="200" height="auto" />
@@ -22,22 +14,9 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 # :notebook_with_decorative_cover: Table of Contents
 
-- [About the Project](#star2-about-the-project)
-  - [Screenshots](#camera-screenshots)
-  - [Tech Stack](#space_invader-tech-stack)
-  - [Environment Variables](#key-environment-variables)
-- [Getting Started](#toolbox-getting-started)
-
-  - [Prerequisites](#bangbang-prerequisites)
-  - [Run Locally](#running-run-locally)
-
-- [Acknowledgements](#gem-acknowledgements)
-
-<!-- About the Project -->
-
 ## :star2: About the Project
 
-  <p>RAWG API를 이용해 받아온 여러 게임 데이터들을 사용자가 찾아보기 쉽도록 하기 위해서 제작</p>
+  <p>React-query의 쓰임과 이해도를 높이기 위해서 RAWG API를 이용한 다양한 게임 정보를 불러오는 프로젝트</p>
 
 <!-- Screenshots -->
 
@@ -63,51 +42,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 ### :key: Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file
-
 `REACT_APP_RAWG_API_KEY`
-
-<!-- Getting Started -->
-
-## :toolbox: Getting Started
-
-<!-- Prerequisites -->
-
-### :bangbang: Prerequisites
-
-Install repository
-
-```bash
- npm install
-```
-
-<!-- Run Locally -->
-
-### :running: Run Locally
-
-Clone the project
-
-```bash
-  git clone https://github.com/Hyun198/videogame.git
-```
-
-Go to the project directory
-
-```bash
-  cd my-project
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm start
-```
 
 <!-- Acknowledgments -->
 

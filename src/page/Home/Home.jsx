@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './Home.style.css'
 import { useGamesQuery } from '../../hooks/useGamesQuery';
 import { useGameScreenShotQuery } from '../../hooks/useGameScreenShotQuery'
@@ -8,10 +9,6 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { DotLoader } from 'react-spinners'
-//1. 인기 탑 게임들
-//2. 카테고리별 구별
-//3. footer
-//4. our game stores ? 랜덤한 게임들 보여주기?
 
 const responsive = {
     superLargeDesktop: {
@@ -25,11 +22,11 @@ const responsive = {
     },
     tablet: {
         breakpoint: { max: 1024, min: 464 },
-        items: 2
+        items: 3
     },
     mobile: {
         breakpoint: { max: 464, min: 0 },
-        items: 1
+        items: 3
     }
 };
 
@@ -85,12 +82,16 @@ const Home = () => {
 
             <section className="search-bar">
                 <h1>Find your Adventure</h1>
-                <input className="search-input"
-                    type="text"
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    placeholder="Search ..." />
-                <button onClick={handleSearch} className="search-btn">Search</button>
+                <div className="search-container">
+                    <input className="search-input"
+                        type="text"
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                        placeholder="Search ..." />
+                    <button onClick={handleSearch} className="search-btn">
+                        <FontAwesomeIcon icon={faSearch} style={{ color: '#c141ec' }} />
+                    </button>
+                </div>
             </section>
 
             <section className="popular-games">

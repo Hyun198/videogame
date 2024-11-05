@@ -76,18 +76,6 @@ section {
     border-radius: 2px;
 }
 
-.Home .content img {
-    width: 500px;
-    position: absolute;
-    top: 400px;
-    right: 250px;
-    filter: brightness(1.4);
-    transition: 0.5s ease;
-}
-
-.Home .content img:hover {
-    scale: 1.2;
-}
 
 .Home .media-icons {
     z-index: 888;
@@ -128,19 +116,38 @@ section {
     letter-spacing: 3px;
 }
 
-.search-bar .search-input {
-    width: 50%;
-    padding: 10px 5px;
-    border-radius: 10px;
-    font-size: 16px;
-    border: none;
+.search-bar .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    background-color: #fff;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 5px;
 }
 
-.search-bar .search-btn {
+.search-input {
+    flex: 1;
     padding: 10px;
-    border-radius: 20px;
     border: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: 50px 0px 0px 50px;
+}
 
+.search-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    color: #000;
+    align-items: center;
+    justify-content: center;
 }
 
 .popular-games h2 {
@@ -232,7 +239,7 @@ section {
 }
 
 .game-screenshots img {
-    width: 100%;
+    width: 250px;
     height: 100%;
     object-fit: contain;
 }
